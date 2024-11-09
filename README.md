@@ -1,4 +1,4 @@
-# my-first-app-fall-2024
+# my-first-app-2024-ttp11
 
 ## Setup
 
