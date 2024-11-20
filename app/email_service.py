@@ -47,14 +47,19 @@ def send_email_with_sendgrid(recipient_address=SENDGRID_SENDER_ADDRESS,
         #print(response.body)
         #print(response.headers)
         print("Email sent successfully!")
+        return response.status_code
     except Exception as err:
         print(f"Error sending email:")
         print(type(err))
         print(err)
 
+        return None
 
 
 
-# SEND EXAMPLE EMAIL:
 
-send_email_with_sendgrid(html_content="Hello. Tuesday Night")
+if __name__ == "__main__":
+
+    # SEND EXAMPLE EMAIL:
+
+    send_email_with_sendgrid(html_content="Hello. Tuesday Night")
