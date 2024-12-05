@@ -10,6 +10,8 @@ from plotly.express import line
 
 from app.alpha_service import API_KEY
 
+def format_pct(x):
+    return f"{x:.2f}%"
 
 def fetch_unemployment_json():
 
