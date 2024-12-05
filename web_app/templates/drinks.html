@@ -1,0 +1,28 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "drinks" %}
+
+{% block content %}
+
+<h1>Non-Alcholic Drinks</h1>
+
+<p class="lead">This is the drinks page</p>
+
+{% if drinks|length > 0 %}
+    <div class="row">
+        {% for drink in drinks %}
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; margin-bottom: 20px;">
+                    <img class="card-img-top" src="{{ drink.strDrinkThumb }}" alt="an image of '{{ drink.strDrink }}'">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ drink.strDrink }}</h5>
+                        <p class="card-text">A classic {{ drink.strDrink }}.</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Oops, no drinks found.</p>
+{% endif %}
+
+{% endblock %}
