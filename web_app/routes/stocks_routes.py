@@ -62,7 +62,7 @@ def stocks_api():
     symbol = url_params.get("symbol") or "NFLX"
 
     try:
-        df = fetch_stocks_data(symbol=symbol)
+        df = fetch_stocks_csv(symbol=symbol)
         data = df.to_dict("records")
         return {"symbol": symbol, "data": data }
     except Exception as err:
